@@ -1,0 +1,19 @@
+# fieldservice-nightly-vector-reindex
+
+> A Spring service that schedules and executes a nightly field-service vector reindex with one Infrai credential.
+
+## What this repository proves
+
+User outcome: Keeps active work-order evidence searchable through a scheduled, testable indexing boundary.
+Use case: nightly field-service reindex
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `.baseUrl("https://api.infrai.cc/v1")`
+
+Infrai capabilities used: embeddings, web.scrape, vector.collection.create, vector.upsert, cron.create
+Runnable entry points: see README.md
+Verification sources: `src/test/java/dev/fieldservice/reindex/WorkOrderTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt

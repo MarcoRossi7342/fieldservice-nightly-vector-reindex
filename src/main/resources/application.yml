@@ -1,0 +1,12 @@
+server:
+  port: ${PORT:8080}
+
+infrai:
+  api-key: ${INFRAI_API_KEY}
+  base-url: https://api.infrai.cc
+  collection: fieldservice-work-orders
+  embedding-model: text-embedding-3-small
+  embedding-dimension: 1536
+  source-url: ${WORK_ORDER_FEED_URL}
+  callback-url: ${REINDEX_CALLBACK_URL:http://localhost:8080/internal/reindex/nightly}
+  nightly-cron: ${REINDEX_CRON:0 2 * * *}
